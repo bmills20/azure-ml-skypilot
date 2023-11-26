@@ -1,4 +1,4 @@
-# Hugging Face Model Deployment to Azure
+# Deploying a HuggingFace model to Azure Machine learning (SkyPilot + vLLM + Azure CLI)
 
 This repository contains the necessary configuration and code to deploy a Hugging Face model to Azure using SkyPilot.
 
