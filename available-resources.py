@@ -1,4 +1,4 @@
-# List available VM sizes in a region on Azure
+# List available VMs by quota in a region on Azure
 
 from azure.mgmt.compute import ComputeManagementClient
 from azure.identity import DefaultAzureCredential
@@ -13,7 +13,11 @@ location = os.getenv('AZURE_LOCATION')
 credential = DefaultAzureCredential()
 compute_client = ComputeManagementClient(credential, subscription_id)
 
-vm_sizes = compute_client.virtual_machine_sizes.list(location)
+# List quota information
+usages = compute_client.usage.list(location)
 
-for size in vm_sizes:
-    print(size.name)
+for usage in usages:
+    print(f"Resource: {usage.name.localized_value}")
+    print(f"Limit: {usage.limit}")
+    print(f"Current Value: {usage.current_value}")
+    print("-------------------------------")

@@ -12,6 +12,11 @@ Before you begin, ensure you have met the following requirements:
 - You have a `.env` file in your repository root with your Azure credentials and other necessary environment variables.
 - You have installed the necessary Python packages. You can do this by running `pip install -r requirements.txt` in your repository root.
 
+## Check your available resources
+```
+py available-resources.py
+```
+
 ## Deploying the Model
 
 To deploy the model to Azure, run the following command:
